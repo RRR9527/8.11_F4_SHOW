@@ -16,6 +16,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         }else{
             figures.button.button_state = ON;            
             figures.button.button_timer.time_ticks = 0U;
+            figures.the_beep.is_active = ACTIVE;
         }
     }
 }

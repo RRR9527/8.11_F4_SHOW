@@ -45,6 +45,10 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             figures.the_beep.beep_timer.time_ticks = 0U;
         }
 
+        if (figures.button.button_state){
+            figures.button.button_timer.time_ticks += 2U;
+        }
+
         switch (figures.signal){
 
             case IDLE:{
@@ -92,6 +96,6 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
         if (figures.signal){
             figures.leds.led_timer.time_ticks += 2;
-        }          
+        }        
     }
 }
