@@ -3,7 +3,7 @@
 uint16_t tim1_counter = 0;
 static uint8_t dir = 1;
 
-comprehensive_figures figures = {
+volatile comprehensive_figures figures = {
     .button = {
         .button_state = BUTTON_OFF, 
         .button_timer = {.time_ticks = 0U, .duration = 1000U}
