@@ -19,7 +19,7 @@ volatile comprehensive_figures figures = {
     .the_beep = {
         .beep_state = OFF, 
         .is_active = INACTIVE, 
-        .beep_timer = {.time_ticks = 0U, .duration = 50U}
+        .beep_timer = {.time_ticks = 0U, .duration = 300U}
     }
 };
 
