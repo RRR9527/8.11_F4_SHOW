@@ -23,6 +23,7 @@ volatile comprehensive_figures figures = {
     }
 };
 
+
 void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim->Instance == TIM2)
@@ -34,15 +35,9 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
                     figures.the_beep.beep_state = OFF;
                     figures.the_beep.beep_timer.time_ticks = 0U;
                     figures.the_beep.is_active = INACTIVE;
-                }else {
-                    BEEP_ON();
-                    figures.the_beep.beep_state = ON;
-                    figures.the_beep.beep_timer.time_ticks = 0U;
                 }
             }
             figures.the_beep.beep_timer.time_ticks += 2U;
-        }else{
-            figures.the_beep.beep_timer.time_ticks = 0U;
         }
 
         if (figures.button.button_state){
@@ -96,6 +91,7 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
         if (figures.signal){
             figures.leds.led_timer.time_ticks += 2;
-        }        
+        }     
     }
 }
+

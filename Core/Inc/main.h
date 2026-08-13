@@ -65,6 +65,7 @@ void Error_Handler(void);
 #define BEEP_GPIO_Port GPIOA
 #define INPUT_Pin GPIO_PIN_11
 #define INPUT_GPIO_Port GPIOC
+#define INPUT_EXTI_IRQn EXTI15_10_IRQn
 
 /* USER CODE BEGIN Private defines */
 
