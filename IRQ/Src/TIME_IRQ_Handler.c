@@ -49,11 +49,15 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             case IDLE:{
                 led_off(LED_1);
                 led_off(LED_2);
+                __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0U);
+                __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0U);
                 break;
             }
 
 
             case BLINKING:{
+                __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, 0U);
+                __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, 0U);
                 if (time_expire(figures.leds.led_timer)){
                     if (figures.leds.led_state){
                         led_off(figures.leds.current_led);
@@ -71,6 +75,8 @@ void TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
             }
 
             case BREATHING:{
+                led_off(LED_1);
+                led_off(LED_2);
                 if (figures.leds.breath_direction){
                     figures.leds.level ++;
                 }else{
