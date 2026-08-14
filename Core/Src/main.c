@@ -111,6 +111,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    pin_state = HAL_GPIO_ReadPin(INPUT_GPIO_Port, INPUT_Pin); // 松开 vs 按下
   }
   /* USER CODE END 3 */
 }
